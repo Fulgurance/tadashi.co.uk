@@ -1,0 +1,199 @@
+"pkg-config --exists openssl"
+| pkg-config --libs openssl
+=> "-lssl -lcrypto \n"
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby27  -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby27 -lssl -lcrypto -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+| pkg-config --cflags-only-I openssl
+=> "\n"
+| pkg-config --cflags-only-other openssl
+=> "\n"
+| pkg-config --libs-only-l openssl
+=> "-lssl -lcrypto \n"
+package configuration for openssl
+incflags: 
+cflags: 
+ldflags: 
+libs: -lssl -lcrypto
+
+have_header: checking for openssl/bio.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/bio.h>
+/* end */
+
+--------------------
+
+have_func: checking for DTLS_method() in openssl/ssl.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic      -lssl -lcrypto -lruby27  -lssl -lcrypto -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))DTLS_method; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for TLS_server_method() in openssl/ssl.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic      -lssl -lcrypto -lruby27  -lssl -lcrypto -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLS_server_method; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_CTX_set_min_proto_version(NULL, 0) in openssl/ssl.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic      -lssl -lcrypto -lruby27  -lssl -lcrypto -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: 
+17: int t(void) { SSL_CTX_set_min_proto_version(NULL, 0); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_STORE_up_ref()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic      -lssl -lcrypto -lruby27  -lssl -lcrypto -lm   -lc"
+conftest.c: Dans la fonction « t »:
+conftest.c:14:57: erreur: « X509_STORE_up_ref » non déclaré (première utilisation dans cette fonction)
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_STORE_up_ref; return !p; }
+      |                                                         ^~~~~~~~~~~~~~~~~
+conftest.c:14:57: note: chaque identificateur non déclaré est rapporté une seule fois pour chaque fonction dans laquelle il apparaît
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_STORE_up_ref; return !p; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic      -lssl -lcrypto -lruby27  -lssl -lcrypto -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void X509_STORE_up_ref();
+15: int t(void) { X509_STORE_up_ref(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_CTX_set_ecdh_auto(NULL, 0) in openssl/ssl.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.     -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic      -lssl -lcrypto -lruby27  -lssl -lcrypto -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: 
+17: int t(void) { SSL_CTX_set_ecdh_auto(NULL, 0); return 0; }
+/* end */
+
+--------------------
+

@@ -1,0 +1,138 @@
+have_header: checking for unistd.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby27  -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <unistd.h>
+/* end */
+
+--------------------
+
+have_header: checking for linux/aio_abi.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <linux/aio_abi.h>
+/* end */
+
+--------------------
+
+have_header: checking for linux/io_uring.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <linux/io_uring.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/select.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/select.h>
+/* end */
+
+--------------------
+
+have_type: checking for port_event_t in poll.h... -------------------- no
+
+"x86_64-pc-linux-gnu-gcc -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC   -c conftest.c"
+conftest.c:6:9: erreur: nom de type « port_event_t » inconnu
+    6 | typedef port_event_t conftest_type;
+      |         ^~~~~~~~~~~~
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <poll.h>
+4: 
+5: /*top*/
+6: typedef port_event_t conftest_type;
+7: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_header: checking for sys/epoll.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/epoll.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/event.h... -------------------- no
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: erreur fatale: sys/event.h : Aucun fichier ou dossier de ce type
+    3 | #include <sys/event.h>
+      |          ^~~~~~~~~~~~~
+compilation terminée.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/event.h>
+/* end */
+
+--------------------
+
+have_type: checking for port_event_t in port.h... -------------------- no
+
+"x86_64-pc-linux-gnu-gcc -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC   -c conftest.c"
+conftest.c:3:10: erreur fatale: port.h : Aucun fichier ou dossier de ce type
+    3 | #include <port.h>
+      |          ^~~~~~~~
+compilation terminée.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <port.h>
+4: 
+5: /*top*/
+6: typedef port_event_t conftest_type;
+7: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_header: checking for sys/resource.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/resource.h>
+/* end */
+
+--------------------
+

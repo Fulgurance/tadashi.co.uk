@@ -1,0 +1,95 @@
+have_header: checking for ruby/st.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby27  -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/st.h>
+/* end */
+
+--------------------
+
+have_header: checking for st.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+Dans le fichier inclus depuis conftest.c:3:
+/usr/include/ruby-2.7.0/ruby/backward/st.h:2:2: attention: #warning use "ruby/st.h" instead of bare "st.h" [-Wcpp]
+    2 | #warning use "ruby/st.h" instead of bare "st.h"
+      |  ^~~~~~~
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <st.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_enc_interned_str() in ruby.h... -------------------- no
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby27  -lm   -lc"
+conftest.c: Dans la fonction « t »:
+conftest.c:16:57: erreur: « rb_enc_interned_str » non déclaré (première utilisation dans cette fonction); vouliez-vous utiliser « rb_sym_interned_p » ?
+   16 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
+      |                                                         ^~~~~~~~~~~~~~~~~~~
+      |                                                         rb_sym_interned_p
+conftest.c:16:57: note: chaque identificateur non déclaré est rapporté une seule fois pour chaque fonction dans laquelle il apparaît
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-2.7.0/x86_64-linux -I/usr/include/ruby-2.7.0/ruby/backward -I/usr/include/ruby-2.7.0 -I.    -march=skylake -O2 -pipe -mmovbe -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mpopcnt -mavx -mavx2 -maes -mpclmul -mfsgsbase -mrdrnd -mfma -mbmi -mbmi2 -mf16c -mrdseed -madx -mprefetchwt1 -mclflushopt -mxsavec -mxsaves -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -Wl,-O1 -Wl,--as-needed -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby27  -lm   -lc"
+/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.1/../../../../x86_64-pc-linux-gnu/bin/ld : /tmp/ccPoCcoU.o : dans la fonction « t » :
+conftest.c:(.text+0x7) : référence indéfinie vers « rb_enc_interned_str »
+collect2: erreur: ld a retourné le statut de sortie 1
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void rb_enc_interned_str();
+17: int t(void) { rb_enc_interned_str(); return 0; }
+/* end */
+
+--------------------
+
