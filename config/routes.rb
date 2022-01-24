@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
     root(to: 'pages#home')
-    #get('/home', to: 'pages#home', as: 'home')
+    get('/services', to: 'pages#services', as: 'services')
+    get('/contacts', to: 'pages#contacts', as: 'contacts')
+    get('/about', to: 'pages#about', as: 'about')
 
 end

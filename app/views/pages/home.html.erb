@@ -1,11 +1,41 @@
 <%= stylesheet_link_tag "home" %>
-<div class="header">
-  <h2>ISM</h2>
-  <p>The Ingenius Software Manager advanced tool to build and manage a Linux system from scratch.</p>
-</div>
 
-<ul>
-  <li><a class="active" href="<%= root_path %>">Home</a></li>
-  <li><a href="#news">Documentation</a></li>
-  <li><a href="#contact">Forum</a></li>
+<ul class="MainMenu">
+
+    <li>
+        <a href="<%= root_path %>">
+            Home
+        </a>
+    </li>
+
+    <li class="Services">
+        <a href="<%= services_path %>" class="ServicesButton">
+            Services
+        </a>
+
+        <div class="ServicesContent">
+
+            <a href="<%= services_path %>">
+                    Websites
+            </a>
+
+        </div>
+
+    </li>
+
+    <li>
+        <a href="<%= contacts_path %>">
+            Contacts
+        </a>
+    </li>
+
+    <li>
+        <a href="<%= about_path %>">
+            About
+        </a>
+    </li>
+
 </ul>
+
+<img src="/assets/NewsBanner.jpg" class="NewsBanner">
+<!--<div class="NewsBanner"></div>-->
