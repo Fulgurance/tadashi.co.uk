@@ -1,41 +1,65 @@
 <%= stylesheet_link_tag "home" %>
 
-<ul class="MainMenu">
+<header>
 
-    <li>
-        <a href="<%= root_path %>">
-            Home
-        </a>
-    </li>
+    <ul class="MainMenu">
 
-    <li class="Services">
-        <a href="<%= services_path %>" class="ServicesButton">
-            Services
-        </a>
+        <li class="Home">
+            <a href="<%= root_path %>">
+                Home
+            </a>
+        </li>
 
-        <div class="ServicesContent">
-
-            <a href="<%= services_path %>">
-                    Websites
+        <li class="Services">
+            <a href="<%= services_path %>" class="ServicesButton">
+                Services
             </a>
 
+            <div class="ServicesContent">
+
+                <a href="<%= services_path %>">
+                        Websites
+                </a>
+
+            </div>
+
+        </li>
+
+        <li class="Contacts">
+            <a href="<%= contacts_path %>">
+                Contacts
+            </a>
+        </li>
+
+        <li class="About">
+            <a href="<%= about_path %>">
+                About
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="News">
+
+        <img src="/assets/NewsBanner.jpg" class="NewsBanner">
+
+        <button class="ReadMore">
+            Read more
         </div>
 
-    </li>
+    </div>
 
-    <li>
-        <a href="<%= contacts_path %>">
-            Contacts
-        </a>
-    </li>
+</header>
 
-    <li>
-        <a href="<%= about_path %>">
-            About
-        </a>
-    </li>
+<footer class="Footer">
 
-</ul>
+    <div class="SocialLinks">
 
-<img src="/assets/NewsBanner.jpg" class="NewsBanner">
-<!--<div class="NewsBanner"></div>-->
+        <img src="/assets/Facebook.png">
+        <img src="/assets/Twitter.png">
+        <img src="/assets/Instagram.png">
+        <img src="/assets/Linkedin.png">
+
+    </div>
+
+</footer>
