@@ -4,7 +4,6 @@ body
     font-size: 1.1em;
     padding: 0;
     margin: 0;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -195,8 +194,8 @@ body
 .MainBody .Technologies .Presentation
 {
     z-index: 1;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
@@ -233,6 +232,7 @@ body
     align-self: flex-start;
     color: #ff5566;
     text-shadow: 2px 2px 2px #ff556655, -2px -2px 2px #ff556655, -2px 2px 2px #ff556655, 2px -2px 2px #ff556655;
+    width: 50%;
 }
 
 .MainBody .Technologies .Presentation .RubyOnRailsIcon
@@ -245,6 +245,7 @@ body
     align-self: flex-end;
     color: #55ff66;
     text-shadow: 2px 2px 2px #55ff6655, -2px -2px 2px #55ff6655, -2px 2px 2px #55ff6655, 2px -2px 2px #55ff6655;
+    width: 50%;
 }
 
 .MainBody .Technologies .Presentation .Html5Icon
@@ -257,6 +258,7 @@ body
     align-self: flex-start;
     color: #ff5500;
     text-shadow: 2px 2px 2px #ff550055, -2px -2px 2px #ff550055, -2px 2px 2px #ff550055, 2px -2px 2px #ff550055;
+    width: 50%;
 }
 
 .MainBody .Technologies .Presentation .Css3Icon
@@ -269,6 +271,7 @@ body
     align-self: flex-end;
     color: #00eeff;
     text-shadow: 2px 2px 2px #00eeff55, -2px -2px 2px #00eeff55, -2px 2px 2px #00eeff55, 2px -2px 2px #00eeff55;
+    width: 50%;
 }
 
 .MainBody .PresentationWallpaper
