@@ -4,46 +4,44 @@
 
     <ul class="MainMenu">
 
-        <li class="Home">
-            <a href="<%= root_path %>">
-                Home
-            </a>
-        </li>
+        <img href="<%= root_path %>" src="/assets/TadashiLogo.png" class="Home">
 
-        <li class="Services">
-            <a href="<%= services_path %>" class="ServicesButton">
-                Services
-            </a>
+        <div class="Categories">
 
-            <div class="ServicesContent">
-
-                <a href="<%= services_path %>">
-                        Websites
+            <li class="Services">
+                <a href="<%= services_path %>" class="Button">
+                    Services
                 </a>
 
-            </div>
+                <div class="Content">
 
-        </li>
+                    <a href="<%= services_path %>" class="Button">
+                            Websites
+                    </a>
 
-        <li class="Contacts">
-            <a href="<%= contacts_path %>">
-                Contacts
-            </a>
-        </li>
+                </div>
 
-        <li class="About">
-            <a href="<%= about_path %>">
-                About
-            </a>
-        </li>
+            </li>
+
+            <li class="Contacts">
+                <a href="<%= contacts_path %>" class="Button">
+                    Contacts
+                </a>
+            </li>
+
+            <li class="About">
+                <a href="<%= about_path %>" class="Button">
+                    About
+                </a>
+            </li>
+
+        </div>
 
     </ul>
 
     <div class="News">
 
-        <img src="/assets/NewsBanner.jpg" class="NewsBanner">
-
-        <button class="ReadMore">
+        <button class="ReadMoreButton">
             Read more
         </div>
 
@@ -53,7 +51,7 @@
 
 <div class="MainBody">
 
-    <div class="Presentation">
+    <div class="Content">
 
         <h2 class="Title">
             Website design solution for companies and individuals
@@ -71,15 +69,13 @@
 
     <div class="Technologies">
 
-        <img src="/assets/PresentationWallpaper.jpg" class="PresentationWallpaper">
-
-        <div class="Presentation">
+        <div class="Content">
 
             <div class="Ruby">
 
-                <img src="/assets/Ruby.png" class="RubyIcon">
+                <img src="/assets/Ruby.png" class="Icon">
 
-                <p class="RubyDescription">
+                <p class="Description">
                     The powerful and dynamic open source Ruby programming language, object oriented, multiplatforms and focused on productivity.
                 </p>
 
@@ -87,9 +83,9 @@
 
             <div class="RubyOnRails">
 
-                <img src="/assets/RubyOnRails.png" class="RubyOnRailsIcon">
+                <img src="/assets/RubyOnRails.png" class="Icon">
 
-                <p class="RubyOnRailsDescription">
+                <p class="Description">
                     The famous Rails framework for Ruby and used by big names like Twitch, AirBNB, Shopify, GitHub ...
                 </p>
 
@@ -97,9 +93,9 @@
 
             <div class="Html5">
 
-                <img src="/assets/Html5.png" class="Html5Icon">
+                <img src="/assets/Html5.png" class="Icon">
 
-                <p class="Html5Description">
+                <p class="Description">
                     The fifth and last major HTML version that is a World Wide Web Consortium (W3C) recommendation.
                 </p>
 
@@ -107,9 +103,9 @@
 
             <div class="Css3">
 
-                <img src="/assets/Css3.png" class="Css3Icon">
+                <img src="/assets/Css3.png" class="Icon">
 
-                <p class="Css3Description">
+                <p class="Description">
                     The third and last major CSS version.
                 </p>
 
@@ -125,10 +121,10 @@
 
     <div class="SocialLinks">
 
-        <img src="/assets/Facebook.png">
-        <img src="/assets/Twitter.png">
-        <img src="/assets/Instagram.png">
-        <img src="/assets/Linkedin.png">
+        <img src="/assets/Facebook.png" class="Facebook">
+        <img src="/assets/Twitter.png" class="Twitter">
+        <img src="/assets/Instagram.png" class="Instagram">
+        <img src="/assets/Linkedin.png" class="Linkedin">
 
     </div>
 
