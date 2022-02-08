@@ -2,52 +2,35 @@
 
 <header>
 
-    <ul class="MainMenu">
+    <nav class="MainMenu Item">
 
-        <img href="<%= root_path %>" src="/assets/TadashiLogo.png" class="Home">
+        <a href="<%= root_path %>" class="Home Item">
+            <img src="/assets/TadashiLogo.png">
+        </a>
 
-        <div class="Categories">
+        <a href="<%= services_path %>" class="Item">
+            Services
+        </a>
 
-            <li class="Services">
-                <a href="<%= services_path %>" class="Button">
-                    Services
-                </a>
+        <a href="<%= contacts_path %>" class="Item">
+            Contacts
+        </a>
 
-                <div class="Content">
+        <a href="<%= about_path %>" class="Item">
+            About
+        </a>
 
-                    <a href="<%= services_path %>" class="Button">
-                            Websites
-                    </a>
-
-                </div>
-
-            </li>
-
-            <li class="Contacts">
-                <a href="<%= contacts_path %>" class="Button">
-                    Contacts
-                </a>
-            </li>
-
-            <li class="About">
-                <a href="<%= about_path %>" class="Button">
-                    About
-                </a>
-            </li>
-
-        </div>
-
-    </ul>
-
-    <div class="News">
-
-        <button class="ReadMoreButton">
-            Read more
-        </div>
-
-    </div>
+    </nav>
 
 </header>
+
+<div class="News">
+
+    <button class="ReadMoreButton">
+        Read more
+    </div>
+
+</div>
 
 <div class="MainBody">
 
@@ -119,12 +102,24 @@
 
 <footer class="Footer">
 
-    <div class="SocialLinks">
+    <div class="Contacts">
 
-        <img src="/assets/Facebook.png" class="Facebook">
-        <img src="/assets/Twitter.png" class="Twitter">
-        <img src="/assets/Instagram.png" class="Instagram">
-        <img src="/assets/Linkedin.png" class="Linkedin">
+        <h3 class="Title">
+            Contacts
+        </h3>
+
+        <a href="mailto:contact@tadashi.co.uk" class="Mail">
+            contact@tadashi.co.uk
+        </a>
+
+        <div class="SocialLinks">
+
+            <img src="/assets/Facebook.png" class="Facebook">
+            <img src="/assets/Twitter.png" class="Twitter">
+            <img src="/assets/Instagram.png" class="Instagram">
+            <img src="/assets/Linkedin.png" class="Linkedin">
+
+        </div>
 
     </div>
 

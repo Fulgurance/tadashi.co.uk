@@ -10,56 +10,44 @@ body
     font-size: 22px;
 }
 
-.MainMenu
-{
-    list-style-type: none;
-    overflow: hidden;
+.MainMenu{
     background-color: #333;
-    display: flex;
-}
-
-.Home
-{
-    background-color: white;
-    width: 4em;
-    cursor: pointer;
-}
-
-.Categories
-{
-    display: flex;
-}
-
-.Button
-{
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Button, .Services, .Contacts, .About
-{
-    min-width: 5em;
-    padding-left: 1%;
-    padding-right: 1%;
     height: 4em;
 }
 
-.Home, .Button, .Services, .Contacts, .About
-{
+.MainMenu  a{
+    display: table-cell;
+    padding: 1.4em;
+    text-decoration: none;
+    color: white;
+    margin: 0 1%;
+}
+.MainMenu a:hover{
+    background-color: #4466ff;
+}
+
+.Home img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4em;
+    width: auto;
+}
+
+a.Home{
+    position: relative;
+    background-color: white;
+    padding: 0;
+    height: 4em;
+    width: 4em;
+}
+
+.Item{
     transition: transform .5s;
 }
 
-.Button:hover, .Home:hover, .Services:hover, .Contacts:hover, .About:hover
-{
-    transform: scale(1.07);
-}
-
-.Button:hover, .Services:hover, .Contacts:hover, .About:hover
-{
-    background-color: #4466ff;
+a.Item:hover{
+    transform: scale(1.05);
 }
 
 .News
@@ -108,9 +96,9 @@ body
     color: #5566ff;
 }
 
-.Title, .Introduction
+.Title,.Introduction
 {
-    text-shadow: 2px 2px 2px #0002;
+    text-shadow: 2px 2px 2px #0005;
 }
 
 .Technologies
@@ -149,12 +137,12 @@ body
     align-self: flex-end;
 }
 
-.Ruby, .RubyOnRails, .Html5, .Css3
+.Ruby,.RubyOnRails,.Html5,.Css3
 {
     display: flex;
 }
 
-.RubyOnRails, .Css3
+.RubyOnRails,.Css3
 {
     flex-direction: row-reverse;
 }
@@ -194,21 +182,46 @@ body
     background-color: #333;
 }
 
+.Contacts
+{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+}
+
+.Contacts .Title
+{
+    color: white;
+    text-shadow: 2px 2px 2px #0005;
+}
+
+.Mail
+{
+    color: #4466ff;
+    text-shadow: 2px 2px 2px #0005;
+}
+
 .SocialLinks
 {
 
 }
 
-.SocialLinks .Facebook,.Twitter,.Instagram,.Linkedin
+.Mail,.Facebook,.Twitter,.Instagram,.Linkedin
+{
+    transition: transform .5s;
+}
+
+.Facebook,.Twitter,.Instagram,.Linkedin
 {
     width: 3em;
     height: 3em;
     filter: drop-shadow(8px 8px 4px #0005);
-    transition: transform .5s;
     cursor: pointer;
 }
 
-.SocialLinks .Facebook:hover,.Twitter:hover,.Instagram:hover,.Linkedin:hover
+.Mail:hover,.Facebook:hover,.Twitter:hover,.Instagram:hover,.Linkedin:hover
 {
     transform: scale(1.2);
 }
