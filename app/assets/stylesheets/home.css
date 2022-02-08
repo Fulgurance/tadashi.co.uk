@@ -10,23 +10,35 @@ body
     font-size: 22px;
 }
 
-.MainMenu{
+.MainMenu
+{
     background-color: #333;
     height: 4em;
 }
 
-.MainMenu  a{
+.MainMenu  a
+{
     display: table-cell;
     padding: 1.4em;
     text-decoration: none;
+    text-align: center;
     color: white;
     margin: 0 1%;
+    min-width: 4em;
 }
-.MainMenu a:hover{
+
+.MainMenu a:hover
+{
     background-color: #4466ff;
 }
 
-.Home img{
+.MainMenu .Home:hover
+{
+    background-color: white;
+}
+
+.Home img
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +46,8 @@ body
     width: auto;
 }
 
-a.Home{
+a.Home
+{
     position: relative;
     background-color: white;
     padding: 0;
@@ -42,11 +55,13 @@ a.Home{
     width: 4em;
 }
 
-.Item{
+.Item
+{
     transition: transform .5s;
 }
 
-a.Item:hover{
+a.Item:hover
+{
     transform: scale(1.05);
 }
 
